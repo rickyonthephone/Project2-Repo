@@ -1,9 +1,11 @@
+//This code needs to be worked on because I am not up to date on what all of this is doing - specifically sessions, or the SequelizeStore constant.//
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
+const routes = require('./routes');
+const helpers = require('./utilities');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
