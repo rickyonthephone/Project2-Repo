@@ -1,0 +1,39 @@
+{
+  "name": "project2-repo",
+  "version": "1.0.0",
+  "description": "* **The requirements for Project #2 are as follows:**",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickyonthephone/Project2-Repo.git"
+  },
+  "keywords": [
+    "card",
+    "commerce",
+    "cardcommerce",
+    "project2"
+  ],
+  "author": "Code Brew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rickyonthephone/Project2-Repo/issues"
+  },
+  "homepage": "https://github.com/rickyonthephone/Project2-Repo#readme"
+}
