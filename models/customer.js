@@ -7,7 +7,6 @@ class customer extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
 customer.init(
   {
     customer_id: {
@@ -52,7 +51,7 @@ customer.init(
         allowNull: false,
     },
     state: {
-        type: DataTypes.SET, //need help understanding the SET data type, it is for selection of preset options - not sure if it applies here//
+        type: DataTypes.STRING, //may need to use SET data type, it is for selection of preset options - not sure if it applies here//
         allowNull: false,
     },
     zip_code: {

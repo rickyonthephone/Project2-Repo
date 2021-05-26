@@ -15,11 +15,11 @@ cards.belongsToMany(orders, {
     foreignKey: 'order_id'  //could be product_id - I'm not sure.//
 });
 
-orders.hasMany(cards, {
+orders.hasOne(cards, {
     through: {
         model: order_details
     },
-    foreignKey: 'product_id' //could be order_id - also not sure//
+    foreignKey: 'product_id' 
 })
 
 module.exports = { 
