@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connect');
 
-class orders extends Model {}
+class Orders extends Model {}
 
-orders.init(
+Orders.init(
   {
     order_id: {
       type: DataTypes.INTEGER,
@@ -11,16 +11,51 @@ orders.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    customer_id: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-          model: "customer",
-          key: "id"
+          model: "users",
+          key: "user_id"
       }
     },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    street_address1: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    street_address2: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    zip_code: {
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+    },
+    phone_number: {
+      type: DataTypes.STRING, 
+      allowNull: false,
+      validate: {
+        len:[12],
+      },
+    }, 
     order_date: {
-      type: DataTypes.DATETIME, //not sure why this datatype isn't working properly...//
+      type: DataTypes.DATE,
       allowNull: false,
     },
     shipping_date: {
@@ -33,8 +68,8 @@ orders.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'cards',
+    modelName: 'orders',
   }
 );
 
-module.exports = orders;
+module.exports = Orders;

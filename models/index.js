@@ -1,30 +1,31 @@
-const customer = require('./customer');
-const orders = require('./orders');
-const cards = require('./cards');
-const order_details = require('./order_details');
+const Users = require('./Users');
+const Orders = require('./Orders');
+const Cards = require('./Cards');
+const OrderDetails = require('./OrderDetails');
 
-customer.hasMany(orders, {
-  foreignKey: 'customer_id',
-  onDelete: 'CASCADE'
+Orders.belongsTo(Users, {
+  foreignKey: 'user_id',
 });
- //stopping here, my brain is tired and needs to reset//
-cards.belongsToMany(orders, {
+
+Cards.belongsToMany(Orders, {
   through: {
-      model: order_details
+      model: OrderDetails
   },
-    foreignKey: 'order_id'  //could be product_id - I'm not sure.//
+    foreignKey: 'product_id'
 });
 
-orders.hasOne(cards, {
+Orders.belongsToMany(Cards, {
     through: {
-        model: order_details
+        model: OrderDetails
     },
-    foreignKey: 'product_id' 
-})
+    foreignKey: 'order_id' 
+});
 
 module.exports = { 
-    customer, 
-    orders, 
-    cards,
-    order_details,
+    Users, 
+    Orders, 
+    Cards,
+    OrderDetails,
  };
+
+ 
