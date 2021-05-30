@@ -5,7 +5,7 @@ const express = require('express');
 const session = require('express-session');
 const handlebars = require('express-handlebars');
 //save for when we have routes
-// const routes = require('./routes');
+const routes = require('./routes');
 const sequelize = require('./config/connect');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -36,7 +36,8 @@ app.engine('handlebars', handlebars({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+//API routes
+app.use('/', routes)
 // save for when routes are established
 // app.use(routes);
 
