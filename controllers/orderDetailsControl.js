@@ -1,7 +1,7 @@
 const sequelize = require("../config/connect");
 const Order = require("../models/Orders");
 const OrderDetails = require("../models/OrderDetails");
-const e = require("express");
+const express = require("express");
 
 const getOrderDetailsById = async (req, res) => {
   const { id } = req.params;
