@@ -30,17 +30,20 @@ app.use(session(sess));
 // Inform Express.js on which template engine to use
 app.set('view engine', 'handlebars');
 app.engine('handlebars', handlebars({
-  layoutsDir: `${__dirname}/view/layouts`
+  layoutsDir: `${__dirname}/views/layouts`
   }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(require('./routes/api/index'));
+
 //API routes
 app.use('/', routes)
 // save for when routes are established
 // app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening on port '+ PORT));
 });
