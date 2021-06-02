@@ -5,7 +5,7 @@ Ecommerce is the largest sector of the electronics industry, and remembering to 
 
 GitHub Code Repo: https://github.com/rickyonthephone/Project2-Repo
 
-
+![screenshot](https://github.com/rickyonthephone/Project2-Repo/blob/master/public/images/images/Screen%20Shot%202021-06-01%20at%209.27.10%20PM.png)
 
 
 
