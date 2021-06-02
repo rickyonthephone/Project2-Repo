@@ -3,6 +3,10 @@
 ## Your Task
 Ecommerce is the largest sector of the electronics industry, and remembering to go out and buy greeting cards every Valentines, Mother's Day, Father's Day, Birthday is a hassle. Our greeting card database will allow users to selected from cards that have been created already or allow them to submit their own design and message for a custom card.  
 
+GitHub Code Repo: https://github.com/rickyonthephone/Project2-Repo
+
+
+
 
 
 ## User Story
